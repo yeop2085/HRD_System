@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DisciplinaryDAO">
+	
+	<select id = "listAllDisciplinary" resultType="disciplinary">
+		SELECT * FROM disciplinary
+	</select>
+	
+	<select id = "getDisciplinary" parameterType="int" resultType="disciplinary">
+		SELECT * FROM disciplinary
+		WHERE disciplinary_number = #{disciplinary_number}
+	</select>
+	
+	<select id = "getDisciplinaryByEmployeeId" parameterType="String" resultType="disciplinary">
+		SELECT * FROM employee
+		WHERE employee_id = #{employee_id}
+	</select>
+	
+	<insert id = "insertDisciplinary" parameterType="disciplinary">
+		INSERT INTO disciplinary (disciplinary_number, employee_id, disciplinary_and_so_on, disciplinary_reason)
+			VALUES(disciplinary_number_seq.nextval, #{employee_id}, #{disciplinary_and_so_on}, #{disciplinary_reason})
+	</insert>
+	
+	<delete id = "deleteDisciplinary" parameterType="int">
+		DELETE FROM disciplinary
+		WHERE disciplinary_number = #{disciplinary_number}
+	</delete>
+	
+	<select id = "countDisciplinary" resultType="int" parameterType="String">
+		SELECT count(*)
+		FROM disciplinary
+		WHERE employee_id LIKE '%'||#{employee_id}||'%'
+	</select>
+	
+	<!-- PageNum : 현재 페이지 번호, numPerPage : 페이지당 출력 항목 수 -->
+	<select id = "listWithPaging" parameterType="hashMap" resultType="disciplinary">
+		<![CDATA[
+		SELECT disciplinary_number, employee_id, disciplinary_and_so_on, disciplinary_reason, disciplinary_regdate
+		FROM
+			(SELECT rownum rn, disciplinary_number, employee_id, disciplinary_and_so_on, disciplinary_reason, disciplinary_regdate
+			FROM disciplinary
+			WHERE employee_id LIKE '%'||#{key}||'%'
+			AND rownum <= #{criteria.pageNum} * #{criteria.numPerPage})
+		WHERE rn > (#{criteria.pageNum} -1) * #{criteria.numPerPage}
+		]]>
+	</select>
+	
+	<select id = "list3Disciplinary" resultType="disciplinary">
+		<![CDATA[
+		SELECT disciplinary_number, employee_id, disciplinary_and_so_on, disciplinary_reason
+		FROM
+    		(select rownum, disciplinary_number, employee_id, disciplinary_and_so_on, disciplinary_reason
+    		from disciplinary order by disciplinary_regdate desc)
+		WHERE rownum <=3
+		]]>
+	</select>
+	
+	<select id = "getChartDisciplinaryNo" resultType="int">
+		SELECT count(*)
+		FROM disciplinary 
+		WHERE disciplinary_reason LIKE '%'||'없음'||'%'
+	</select>
+	
+	<select id = "getChartDisciplinaryYes" resultType="int">
+		SELECT count(*)
+		FROM disciplinary 
+		WHERE disciplinary_reason LIKE '%'||'있음'||'%'
+	</select>
+	
+	
+	
+</mapper>

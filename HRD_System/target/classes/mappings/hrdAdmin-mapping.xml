@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="HrdAdminDAO">
+	
+	<select id = "loginAdmin" resultType="hrdAdmin">
+		SELECT *
+		FROM hrd_admin
+		WHERE hrd_admin_id = #{hrd_admin_id} 
+		AND hrd_admin_pwd = #{hrd_admin_pwd}
+	</select>
+	
+	<select id = "getAdmin" resultType="hrdAdmin" parameterType="String">
+		SELECT *
+		FROM hrd_admin
+		WHERE hrd_admin_id = #{hrd_admin_id}
+	</select>
+	
+	<update id = "updateAdmin" parameterType="String">
+		UPDATE hrd_admin
+		SET hrd_admin_name = #{hrd_admin_name}, hrd_admin_phone = #{hrd_admin_phone}, 
+			hrd_admin_live = #{hrd_admin_live}
+		WHERE hrd_admin_id = #{hrd_admin_id}
+	</update>
+	
+	<insert id = "insertAdmin" parameterType="hrdAdmin">
+		INSERT INTO hrd_admin (hrd_admin_id, hrd_admin_pwd, hrd_admin_name, hrd_admin_phone, hrd_admin_live, hrd_image)
+			VALUES(#{hrd_admin_id}, #{hrd_admin_pwd}, #{hrd_admin_name}, #{hrd_admin_phone}, #{hrd_admin_live}, #{hrd_image})
+	</insert>
+	
+	<select id = "getAdminPwd" resultType="hrdAdmin" parameterType="String">
+		SELECT *
+		FROM hrd_admin
+		WHERE hrd_admin_pwd = #{hrd_admin_pwd}
+	</select>
+	
+	<delete id = "deleteAdmin" parameterType="String">
+		DELETE FROM hrd_admin
+		WHERE hrd_admin_id = #{hrd_admin_id}
+	</delete>
+	
+	<select id = "getChartSeoul" resultType="int">
+		SELECT count(*)
+		FROM hrd_admin
+		WHERE hrd_admin_live LIKE '%'||'서울'||'%'	
+	</select>
+	
+	<select id = "getChartIncheon" resultType="int">
+		SELECT count(*)
+		FROM hrd_admin
+		WHERE hrd_admin_live LIKE '%'||'인천'||'%'	
+	</select>
+	
+	<select id = "getChartKyungGi" resultType="int">
+		SELECT count(*)
+		FROM hrd_admin
+		WHERE hrd_admin_live LIKE '%'||'경기'||'%'	
+	</select>
+	
+	<select id = "getChartBusan" resultType="int">
+		SELECT count(*)
+		FROM hrd_admin
+		WHERE hrd_admin_live LIKE '%'||'부산'||'%'	
+	</select>
+	
+	<select id = "getChungNam" resultType="int">
+		SELECT count(*)
+		FROM hrd_admin
+		WHERE hrd_admin_live LIKE '%'||'충남'||'%'	
+	</select>
+	
+	<select id = "getKyungNam" resultType="int">
+		SELECT count(*)
+		FROM hrd_admin
+		WHERE hrd_admin_live LIKE '%'||'경남'||'%'	
+	</select>
+	
+	
+</mapper>

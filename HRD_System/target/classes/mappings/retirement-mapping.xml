@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="RetirementDAO">
+	
+	<select id = "listAllRetirement" resultType="retirement">
+		SELECT * FROM retirement
+	</select>
+	
+	<select id = "getRetirement" parameterType="int" resultType="retirement">
+		SELECT * FROM retirement
+		WHERE retirement_number = #{retirement_number}
+	</select>
+	
+	<!-- 아이디를 employee 테이블에서 가져와야 한다. -->
+	<select id = "getRetirementByEmployeeId" parameterType="String" resultType="retirement">
+		SELECT * FROM employee
+		WHERE employee_id = #{employee_id}
+	</select>
+	
+	<insert id = "insertRetirement" parameterType="retirement">
+		INSERT INTO retirement (retirement_number, employee_id, retirement_and_so_on, retirement_salary, retirement_retire)
+			VALUES (retirement_number_seq.nextval, #{employee_id}, #{retirement_and_so_on}, #{retirement_salary}, #{retirement_retire})
+	</insert>
+	
+	<delete id = "deleteRetirement" parameterType="int">
+		DELETE FROM retirement
+		WHERE retirement_number = #{retirement_number}
+	</delete>
+	
+	<select id = "countRetirementList" resultType="int" parameterType="String">
+		SELECT count(*)
+		FROM retirement
+		WHERE employee_id LIKE '%'||#{employee_id}||'%'
+	</select>
+	
+	<select id = "listWithPaging" parameterType="hashMap" resultType="retirement">
+		<![CDATA[
+		SELECT retirement_number, employee_id, retirement_and_so_on, retirement_salary, retirement_retire
+		FROM
+			(SELECT rownum rn, retirement_number, employee_id, retirement_and_so_on, retirement_salary, retirement_retire
+			FROM retirement
+			WHERE employee_id LIKE '%'||#{key}||'%'
+			AND rownum <= #{criteria.pageNum} * #{criteria.numPerPage})
+		WHERE rn > (#{criteria.pageNum} -1) * #{criteria.numPerPage}
+		]]>
+	</select>
+	
+	<select id = "getChart5000000DowmEmployee" resultType="int">
+		<![CDATA[
+		SELECT count(*)
+		FROM retirement
+		WHERE retirement_salary <= 5000000
+		]]>
+	</select>
+	
+	<select id = "getChart10000000DowmEmployee" resultType="int">
+		<![CDATA[
+		SELECT count(*)
+		FROM retirement
+		WHERE retirement_salary <= 10000000 AND retirement_salary > 5000000
+		]]>
+	</select>
+	
+	<select id = "getChart10000000OverEmployee" resultType="int">
+		<![CDATA[
+		SELECT count(*)
+		FROM retirement
+		WHERE retirement_salary > 10000000
+		]]>
+	</select>
+	
+	<select id = "list3Retirement" resultType="retirement">
+		<![CDATA[
+		SELECT retirement_number, employee_id, retirement_and_so_on, retirement_salary, retirement_retire
+		FROM
+    		(select rownum, retirement_number, employee_id, retirement_and_so_on, retirement_salary, retirement_retire
+    		from retirement order by retirement_retire desc)
+		WHERE rownum <=3
+		]]>
+	</select>
+	
+</mapper>
+
+
+

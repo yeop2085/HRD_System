@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="InformationDAO">
+	
+	<select id = "listAllInformation" resultType="information">
+		SELECT * FROM information
+		ORDER BY information_number DESC
+	</select>
+	
+	<select id = "getInformation" parameterType="int" resultType="information">
+		SELECT *
+		FROM information
+		WHERE information_number = #{information_number}
+	</select>
+	
+	<insert id = "insertInformation" parameterType="information">
+		INSERT INTO information (information_number, title, content)
+		VALUES(information_nubmer_seq.nextval, #{title}, #{content})
+	</insert>
+	
+	<delete id = "deleteInformation" parameterType="int">
+		DELETE FROM information
+		WHERE information_number = #{information_number}
+	</delete>
+	
+	<select id = "countInformation" resultType="int" parameterType="String">
+		SELECT count(*)
+		FROM information
+		WHERE title LIKE '%'||#{title}||'%'
+	</select>
+	
+	<!-- PageNum : 현재 페이지 번호, numPerPage : 페이지당 출력항목 수 -->
+	<select id = "listWithPaging" parameterType="hashMap" resultType="information">
+		<![CDATA[
+		SELECT information_number, title, content, regdate
+		FROM
+			(SELECT rownum rn, information_number, title, content, regdate
+			FROM information
+			WHERE title LIKE '%'||#{key}||'%'
+			AND rownum <= #{criteria.pageNum} * #{criteria.numPerPage})
+		WHERE rn > (#{criteria.pageNum} -1) * #{criteria.numPerPage}
+		]]>
+	</select>
+	
+	<!-- PageNum : 현재 페이지 번호, numPerPage : 페이지당 출력항목 수 -->
+	<select id = "getListWithPagingNotKey" parameterType="hashMap" resultType="information">
+		<![CDATA[
+		SELECT information_number, title, content, regdate
+		FROM
+			(SELECT rownum rn, information_number, title, content, regdate
+			FROM information
+			AND rownum <= #{criteria.pageNum} * #{criteria.numPerPage})
+		WHERE rn > (#{criteria.pageNum} -1) * #{criteria.numPerPage}
+		]]>
+	</select>
+	
+	<!-- 공지사항 리스트 목록 3개 가져오기 -->
+	<select id = "list3Information" resultType="information">
+		<![CDATA[
+			SELECT information_number, title, regdate
+			FROM 
+    			(SELECT rownum, information_number, title, regdate
+    			FROM information ORDER BY information_number DESC)
+			WHERE rownum <= 3
+		]]>
+	</select>
+	
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="VacationDAO">
+	
+	<select id = "listAllVacaction" resultType="vacation">
+		SELECT * FROM vacation
+	</select>
+	
+	<select id = "getVacation" parameterType="int" resultType="vacation">
+		SELECT * FROM vacation
+		WHERE vacation_number = #{vacation_number}
+	</select>
+	
+	<select id = "getVacationByEmployeeId" parameterType="String" resultType="vacation">
+		SELECT * FROM employee
+		WHERE employee_id = #{employee_id}
+	</select>
+	
+	<delete id = "deleteVacation" parameterType="int">
+		DELETE FROM vacation
+		WHERE vacation_number = #{vacation_number}
+	</delete>
+	
+	<insert id = "insertVacation" parameterType="vacation">
+		INSERT INTO vacation (vacation_number, employee_id, vacation_reason)
+		VALUES(vacation_number_seq.nextval, #{employee_id}, #{vacation_reason})
+	</insert>
+	
+	<select id = "countVacation" resultType="int" parameterType="String">
+		SELECT count(*)
+		FROM vacation
+		WHERE employee_id LIKE '%'||#{employee_id}||'%'
+	</select>
+	
+	<!-- PageNum : 현재 페이지 번호, numPerPage : 페이지당 출력항목 수 -->
+	<select id = "listWithPaging" parameterType="hashMap" resultType="vacation">
+		<![CDATA[ 
+		SELECT vacation_number, employee_id, vacation_reason, vacation_regdate
+		FROM
+			(SELECT rownum rn, vacation_number, employee_id, vacation_reason, vacation_regdate
+			FROM vacation
+			WHERE employee_id LIKE '%'||#{key}||'%'
+			AND rownum <= #{criteria.pageNum} * #{criteria.numPerPage})
+		WHERE rn > (#{criteria.pageNum} -1) * #{criteria.numPerPage}
+		]]>
+	</select>
+	
+	<select id = "getChartMyungjeongVacation" resultType="int">
+		SELECT count(*)
+		FROM vacation
+		WHERE vacation_reason LIKE '%'||'명절휴가'||'%'
+	</select>
+	
+	<select id = "getChartOverseasTrip" resultType="int">
+		SELECT count(*)
+		FROM vacation
+		WHERE vacation_reason LIKE '%'||'해외여행'||'%'
+	</select>
+	
+	<select id = "getChartFamilyTrip" resultType="int">
+		SELECT count(*)
+		FROM vacation
+		WHERE vacation_reason LIKE '%'||'가족여행'||'%'
+	</select>
+	
+	<select id = "getChartSickLeave" resultType="int">
+		SELECT count(*)
+		FROM vacation
+		WHERE vacation_reason LIKE '%'||'병가'||'%'
+	</select>
+	
+	<select id = "list3Vacation" resultType="vacation">
+		<![CDATA[
+		SELECT vacation_number, employee_id, vacation_reason, vacation_regdate
+		FROM
+    		(select rownum, vacation_number, employee_id, vacation_reason, vacation_regdate
+    		from vacation order by vacation_regdate desc)
+		WHERE rownum <=3
+		]]>
+	</select>
+	
+	
+	
+</mapper>
+

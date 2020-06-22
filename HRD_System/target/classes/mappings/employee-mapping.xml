@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="EmployeeDAO">
+	
+	<select id = "loginEmployee" resultType="employee">
+		SELECT * 
+		FROM employee
+		WHERE employee_id=#{employee_id} 
+		AND employee_pwd=#{employee_pwd}  
+	</select>
+	
+	<insert id = "insertEmployee">
+	INSERT INTO employee(employee_id, employee_pwd, employee_name, employee_gender, employee_age, employee_blood_type, 
+            employee_live, employee_position, employee_department, employee_self_introduction, 
+            employee_and_so_on)
+    VALUES(#{employee_id}, #{employee_pwd}, #{employee_name}, #{employee_gender}, #{employee_age}, #{employee_blood_type}, 
+    	#{employee_live}, #{employee_position}, #{employee_department}, #{employee_self_introduction}, 
+    	#{employee_and_so_on})      
+	</insert>
+	
+	<select id = "getEmployee" parameterType="String" resultType="employee">
+		SELECT * FROM employee
+		WHERE employee_id = #{employee_id}
+	</select>
+	
+	<select id = "getEmployeePwd" parameterType="String" resultType="employee">
+		SELECT * FROM employee
+		WHERE employee_pwd = #{employee_pwd}
+	</select>
+	
+	<delete id = "deleteEmployee" parameterType="String">
+		DELETE FROM employee
+		WHERE employee_id = #{employee_id}
+	</delete>
+	
+	<select id="listAllEmployee" resultType="employee">
+		SELECT * FROM employee
+	</select>
+	
+	<select id = "countEmployee" resultType="int" parameterType="String">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_name LIKE '%'||#{employee_name}||'%'
+	</select>
+	
+	<!-- PageNum : 현재 페이지 번호, numPerPage : 페이지당 출력항목 수 -->
+	<select id = "listWithPaging" parameterType="hashMap" resultType="employee">
+		<![CDATA[
+		SELECT employee_id, employee_pwd, employee_name, employee_gender, employee_age, employee_blood_type, 
+				employee_live, employee_position, employee_department, employee_self_introduction, 
+				employee_and_so_on, employee_regdate
+		FROM
+			(SELECT rownum rn, employee_id, employee_pwd, employee_name, employee_gender, employee_age, employee_blood_type, 
+				employee_live, employee_position, employee_department, employee_self_introduction, 
+				employee_and_so_on, employee_regdate
+			FROM employee
+			WHERE employee_name LIKE '%'||#{key}||'%'
+			AND rownum <= #{criteria.pageNum} * #{criteria.numPerPage})
+		WHERE rn > (#{criteria.pageNum} -1) * #{criteria.numPerPage}
+		]]>
+	</select>
+	
+	<select id = "list3Employee" resultType="employee">
+		<![CDATA[
+		SELECT employee_name, employee_position, employee_age, employee_department, employee_and_so_on
+		FROM
+			(select rownum, employee_name, employee_position, employee_age, employee_department, employee_and_so_on
+			from employee order by employee_regdate desc)
+		WHERE rownum <= 3
+		]]>
+	</select>
+	
+	<select id = "getChartEmployee" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_position = '사원'
+	</select>
+	
+	<select id = "getChartAssistantManager" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_position = '대리'
+	</select>
+	
+	<select id = "getChartSectionChief" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_position = '과장'
+	</select>
+	
+	<select id = "getDeputyDepartmentHead" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_position = '차장'
+	</select>
+	
+	<select id = "getDepartmentHead" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_position = '부장'
+	</select>
+	
+	<select id = "getChartSeoul" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_live LIKE '%'||'서울'||'%'
+	</select>
+	
+	<select id = "getChartBusan" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_live LIKE '%'||'부산'||'%'
+	</select>
+	
+	<select id = "getChartIncheon" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_live LIKE '%'||'인천'||'%'
+	</select>
+	
+	<select id = "getChartKyungGi" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_live LIKE '%'||'경기'||'%'
+	</select>
+	
+	<select id = "getCheongNam" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_live LIKE '%'||'충남'||'%'
+	</select>
+	
+	<select id = "getKyungName" resultType="int">
+		SELECT count(*)
+		FROM employee
+		WHERE employee_live LIKE '%'||'경남'||'%'
+	</select>
+	
+	
+	
+	
+</mapper>

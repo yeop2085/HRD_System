@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>
+		<typeAlias type="com.green.biz.employee.EmployeeVO" alias="employee"/>
+		<typeAlias type="com.green.biz.hrdAdmin.HrdAdminVO" alias="hrdAdmin"/>
+		<typeAlias type="com.green.biz.information.InformationVO" alias="information"/>
+		<typeAlias type="com.green.biz.disciplinary.DisciplinaryVO" alias="disciplinary"/>
+		<typeAlias type="com.green.biz.vacation.VacationVO" alias="vacation"/>
+		<typeAlias type="com.green.biz.salary.SalaryVO" alias="salary"/>
+		<typeAlias type="com.green.biz.retirement.RetirementVO" alias="retirement"/>
+		<typeAlias type="com.green.biz.util.Criteria" alias="criteria"/>
+	</typeAliases>
+	
+	
+	<mappers>
+		<mapper resource="mappings/employee-mapping.xml"></mapper>
+		<mapper resource="mappings/hrdAdmin-mapping.xml"></mapper>
+		<mapper resource="mappings/information-mapping.xml"></mapper>
+		<mapper resource="mappings/disciplinary-mapping.xml"></mapper>
+		<mapper resource="mappings/vacation-mapping.xml"></mapper>
+		<mapper resource="mappings/salary-mapping.xml"></mapper>
+		<mapper resource="mappings/retirement-mapping.xml"></mapper>
+	</mappers>
+	
+	
+</configuration>

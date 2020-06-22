@@ -1,0 +1,2205 @@
+@charset "UTF-8";
+
+/* 
+*	전반적인 스타일 코드 
+*/
+
+/* 검색 테이블 */
+#search {
+	margin-bottom : 20px;
+}
+
+/* 프로젝트 경계를 나눌 때 사용 */
+.clear{clear:both;}
+
+/* 전반적인 body 부분 디자인 */
+body {
+	width : 1800px;
+	height : 1400px;
+	margin : 0px;		
+	padding : 0px;
+	font-size : 1em;
+	font-family : "Dotum", Arial, serif;
+	color : #666;
+	background-color : #ffffff;
+}
+
+/* 전반적인 링크 부분 디자인 */
+a {
+	text-decoration : none;
+	color : #666;
+}
+
+/* 전반적인 링크 부분 디자인 */
+a:hover {
+	text-decoration : underline;
+	color : blue;
+	cursor : pointer;
+}
+
+/* 버튼  */
+form #buttons {
+	margin : 40px 0 0 0;
+}
+
+/* 버튼 */
+form .submit, form .cancel {
+	height: 30px; 
+	width: 150px; 
+	border: 1px solid #666; 
+	border-radius: 10px;  
+	box-shadow: 3px 3px 2px #ccc; 
+	font-size: 14px; 
+	background-repeat: repeat-x;
+	background-position: center center;
+	color: #666;
+	margin : 0 0 0 20px;
+}
+
+/* 버튼  */
+#buttons {
+	margin : 40px 0 0 0;
+}
+
+/* 버튼 */
+.submit, .cancel {
+	height: 30px; 
+	width: 150px; 
+	border: 1px solid #666; 
+	border-radius: 10px;  
+	box-shadow: 3px 3px 2px #ccc; 
+	font-size: 14px; 
+	background-repeat: repeat-x;
+	background-position: center center;
+	color: #666;
+	margin : 0 0 0 20px;
+}
+
+
+/* 검색 버튼 */
+.btn {
+	width : 100px;
+	border-radius : 5px;
+	color : #666;
+	box-shadow : 3px 3px 3px #999999;
+	text-decoration : none;
+	text-align : center;
+	padding : 5px;
+	margin : 0 7px 7px 0px;
+}
+
+/* 검색 버튼 */
+.btn:hover {
+	background-color : #fff;
+}
+
+/* 검색 버튼 */
+.btn:active {
+	box-shadow : none;
+}
+
+
+/* sub_menu.jsp 디자인 */
+nav#sub_menu {
+	width : 200px;
+	height : 600px;
+	float : left;
+	font-family : Arial, Helvetica, sans-serif;
+	margin-top : 200px;
+	margin-left : 100px;
+}
+
+/* information_sub_menu.jsp 디자인 */
+nav#sub_menu ul {
+	list-style : none;
+}
+
+nav#sub_menu ul li {
+	height : 50px;
+	border-bottom : 1px dotted #666;
+	margin-top : 30px;
+}
+
+/* information_sub_menu.jsp 디자인 */
+nav#sub_menu img {
+	width : 150px;
+	height : 400px;
+	margin-top : 50px;
+}
+
+/* 전반적인 article 디자인 */
+article {
+	float: right;
+	width: 80%;
+	height : 60%;
+	padding-right: 10px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	line-height: 1.5em; 
+	margin-top : 60px;
+}
+
+article h3 {
+	font-size : 24px;
+	margin-left : 100px;
+}
+
+/* footer.jsp 디자인 */
+footer {
+	float: left;
+	width: 1800px;
+	height : 150px;
+	text-align : center;
+}
+
+/* footer.jsp 디자인 */
+footer hr {
+	width: 1800px;
+	border: 1px solid #666;
+}
+
+/* header.jsp 디자인 */
+#header {			
+	width : 1800px;
+	height : 70px;
+	float : top;
+	padding : 10px 10px 10px 10px;
+	margin-left : 100px;
+}
+
+/* header.jsp 디자인 */
+#header ul {
+	list-style : none;
+}
+
+/* header.jsp 디자인 */
+#header ul li {
+	float : left;
+	width : 200px;
+	padding : 0 8px;
+	border-right : 1px solid #999;
+}
+
+/* header.jsp 디자인 */
+#header ul li a {
+	text-decoration : none;
+	color : #666;
+	display : block;
+	font-size : 24px;
+	font-weight : bold;
+	text-align : center;
+}
+
+#header ul li a:hover {
+	background : #B2EBF4;
+}
+
+.dropdown {
+	position: relative;	
+}
+
+.dropdown-menu {
+    cursor: pointer;
+}
+
+.dropdown-content {
+	display : none;
+	position: absolute;
+	background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}   
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* 
+*	전반적인 스타일 코드 끝남
+*/
+
+
+/* 
+*	관리자기능의 메인화면 스타일 코드
+*/
+
+/* admin_main.jsp 디자인 */
+#top_menu {
+	width : 1900px;
+	height : 300px;
+	padding-left : 20px;
+	padding-top : 50px;
+}
+
+/* admin_main.jsp 디자인 */
+#top_menu ul{
+	list-style : none;
+}
+
+/* admin_main.jsp 디자인 */
+#top_menu ul li {
+	float : left;
+	width : 500px;
+	border : 1px solid #666;
+	margin : 10px;
+	padding-right : 80px;
+	padding-top : 20px;
+	padding-bottom : 20px;
+	border-radius : 10px;
+}
+
+/* admin_main.jsp 디자인 */
+#top_menu ul li a {
+	text-decoration : none;
+	color : #666;
+	display : block;
+	font-size : 24px;
+	font-weight : bold;
+	text-align : center;
+}
+
+/* admin_main.jsp에서 top_menu_information 디자인 */
+#top_menu_information {
+	width: 400px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 30px;
+}
+
+/* admin_main.jsp에서 top_menu_information 디자인 */
+#top_menu_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 top_menu_information 디자인 */
+#top_menu_information td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 top_menu_hrd_information 디자인 */
+#top_menu_hrd_information {
+	width: 400px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 30px;
+}
+
+/* admin_main.jsp에서 top_menu_hrd_information 디자인 */
+#top_menu_hrd_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 top_menu_hrd_information 디자인 */
+#top_menu_hrd_information td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+
+/* admin_main.jsp 디자인 */
+#botton_menu {
+	width : 1900px;
+	height : 300px;
+	padding-left : 20px;
+	padding-top : 50px;
+}
+
+/* admin_main.jsp 디자인 */
+#botton_menu ul{
+	list-style : none;
+}
+
+/* admin_main.jsp 디자인 */
+#botton_menu ul li {
+	float : left;
+	width : 500px;
+	border : 1px solid #666;
+	margin : 10px;
+	padding-right : 80px;
+	padding-top : 20px;
+	padding-bottom : 20px;
+	border-radius : 10px;
+}
+
+/* admin_main.jsp 디자인 */
+#botton_menu ul li a {
+	text-decoration : none;
+	color : #666;
+	display : block;
+	font-size : 24px;
+	font-weight : bold;
+	text-align : center;
+}
+
+/* admin_main.jsp에서 botton_menu_disciplinary_list 디자인 */
+#botton_menu_disciplinary_list {
+	width: 400px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 30px;
+}
+
+/* admin_main.jsp에서 botton_menu_disciplinary_list 디자인 */
+#botton_menu_disciplinary_list th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_disciplinary_list 디자인 */
+#botton_menu_disciplinary_list td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_salary_list 디자인 */
+#botton_menu_salary_list {
+	width: 400px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 30px;
+}
+
+/* admin_main.jsp에서 botton_menu_salary_list 디자인 */
+#botton_menu_salary_list th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_salary_list 디자인 */
+#botton_menu_salary_list td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_vacation_management 디자인 */
+#botton_menu_vacation_management {
+	width: 400px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 30px;
+}
+
+/* admin_main.jsp에서 botton_menu_vacation_management 디자인 */
+#botton_menu_vacation_management th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_vacation_management 디자인 */
+#botton_menu_vacation_management td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_retirement_information 디자인 */
+#botton_menu_retirement_information {
+	width: 400px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 30px;
+}
+
+/* admin_main.jsp에서 botton_menu_retirement_information 디자인 */
+#botton_menu_retirement_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 botton_menu_retirement_information 디자인 */
+#botton_menu_retirement_information td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+
+#botton_menu_chart {
+	width : 400px;
+	height : 20%;
+	margin-left : 50px;
+}
+
+/* admin_main.jsp에서 login 디자인 */
+#login {
+	width: 400px;
+	height : 150px;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-left : 100px;
+	margin-top : 50px;
+}
+
+/* admin_main.jsp에서 login 디자인 */
+#login th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_main.jsp에서 login 디자인 */
+#login td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+
+
+/* 
+*	관리자기능의 메인화면 스타일 코드 끝남
+*/
+
+
+/* admin_main.jsp 디자인 */
+#bottom_menu {
+	width : 100%;
+	height : 300px;
+	padding-left : 20px;
+}
+
+/* admin_main.jsp 디자인 */
+#bottom_menu tr {
+	padding-right : 40px;
+}
+
+
+
+/* 
+*	관리자기능의 메인화면 스타일 코드 끝남
+*/
+
+
+/* 
+*	사원기능의 메인화면 스타일 코드
+*/
+
+
+/* main.jsp 디자인 */
+#table_top_menu {
+	width : 1800px;
+	height : 300px;
+	padding-left : 20px;
+}
+
+/* main.jsp 디자인 */
+#table_top_menu tr{
+	padding-right : 40px;
+}
+
+/* main.jsp 디자인 */
+#table_bottom_menu {
+	width : 100%;
+	height : 300px;
+	padding-left : 20px;
+}
+
+/* main.jsp 디자인 */
+#table_bottom_menu tr {
+	padding-right : 40px;
+}
+
+
+/* 
+*	사원기능의 메인화면 스타일 코드 끝남
+*/
+
+
+/* 
+*	사원기능의 공지사항 스타일 코드 
+*/
+
+
+/* information.jsp 디자인 */
+article table#information {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+/* information.jsp 디자인 */
+article table#information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* information.jsp 디자인 */
+article table#information td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* informationView.jsp 디자인 */
+form#information_view {
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* informationView.jsp 디자인 */
+form#information_view fieldset {
+	border: none;
+}
+
+/* informationView.jsp 디자인 */
+form#information_view fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* informationView.jsp 디자인 */
+form#information_view label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* informationView.jsp 디자인 */
+#informationView_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+
+/* 
+*	사원기능의 공지사항 스타일 코드 끝남
+*/
+
+
+/* 
+*	사원기능의 기본정보 메뉴 스타일 코드 
+*/
+
+/* basic_information.jsp 디자인 */
+article table#basic_information {
+	width: 80%;
+	height : 60%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+/* basic_information.jsp 디자인 */
+article table#basic_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* basic_information.jsp 디자인 */
+article table#basic_information td {
+	text-align: left;
+	padding: 6px 0;
+}
+
+/* organization_information.jsp 디자인 */
+article table#organization_information {
+	width: 1000px;
+	height : 500px;
+	border-collapse: collapse;
+	margin-left : 50px;
+}
+
+/* organization_information.jsp 디자인 */
+/*
+article table#organization_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+*/
+
+/* organization_information.jsp 디자인 */
+/*
+article table#organization_information td {
+	text-align: center;
+	padding: 6px 0;
+}
+*/
+
+/* salary_information.jsp 디자인 */
+article table#salary_information {
+	width: 1000px;
+	height : 500px;
+	border-collapse: collapse;
+	border : 1px solid #666;
+	margin-left : 100px;
+}
+
+/* salary_information.jsp 디자인 */
+article table#salary_information th {
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom : 1px solid #666;
+	border-left : 1px solid #666;
+}
+
+/* salary_information.jsp 디자인 */
+article table#salary_information td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom : 1px dotted #666;
+	border-left : 1px dotted #666;
+}
+
+/* work_information.jsp 디자인 */
+article table#work_information {
+	width: 80%;
+	height : 60%;
+	border-collapse: collapse;
+}
+
+/* work_information.jsp 디자인 */
+article table#work_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* work_information.jsp 디자인 */
+article table#work_information td {
+	text-align: center;
+	padding: 6px 0;
+}
+
+/* 
+*	사원기능의 기본정보 메뉴 스타일 코드 끝남
+*/
+
+
+/* 
+*	사원기능의 내정보 메뉴 스타일 코드
+*/
+
+/* employee_menu.jsp 디자인 */
+article table#employee_menu {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+/* employee_menu.jsp 디자인 */
+article table#employee_menu th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* employee_menu.jsp 디자인 */
+article table#employee_menu td {
+	text-align: left;
+	padding: 6px 0;
+}
+
+/* employee_mymenu.jsp 디자인 */
+form#employee_mymenu {
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* employee_mymenu.jsp 디자인 */
+form#employee_mymenu fieldset {
+	border: none;
+}
+
+/* employee_mymenu.jsp 디자인 */
+form#employee_mymenu fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* employee_mymenu.jsp 디자인 */
+form#employee_mymenu label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#employee_mymenu_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+
+/* employee_join_post.jsp 디자인 */
+form#employee_join_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* employee_join_post.jsp 디자인 */
+form#employee_join_post fieldset {
+	border: none;
+}
+
+/* employee_join_post.jsp 디자인 */
+form#employee_join_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* employee_join_post.jsp 디자인 */
+form#employee_join_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* employee_join_post.jsp 디자인 */
+#employee_join_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* employee_join_post.jsp 디자인 */
+#employee_join_radio {
+	margin-bottom : 10px;
+	height : 40px;
+}
+
+/* employee_join_main_post.jsp 디자인 */
+form#employee_join_main_post{
+	width: 1000px;
+	height : 800px;
+	margin-top : 50px;
+}
+
+/* employee_join_main_post.jsp 디자인 */
+form#employee_join_main_post fieldset {
+	border: none;
+}
+
+/* employee_join_main_post.jsp 디자인 */
+form#employee_join_main_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* employee_join_main_post.jsp 디자인 */
+form#employee_join_main_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* employee_join_main_post.jsp 디자인 */
+#employee_join_main_post_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* employee_join_main_post.jsp 디자인 */
+#employee_join_main_post_radio {
+	margin-bottom : 10px;
+	height : 40px;
+}
+
+/* employee_idpwd_search.jsp 디자인 */
+article table#employee_idpwd_search {
+	width: 500px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* employee_idpwd_search.jsp 디자인 */
+article table#employee_idpwd_search th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* employee_idpwd_search.jsp 디자인 */
+article table#employee_idpwd_search td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* employee_idpwd_search_main.jsp 디자인 */
+article table#employee_idpwd_search_main {
+	width: 500px;
+	height : 20%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* employee_idpwd_search_main.jsp 디자인 */
+article table#employee_idpwd_search_main th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* employee_idpwd_search_main.jsp 디자인 */
+article table#employee_idpwd_search_main td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* employee_out.jsp 디자인 */
+form#employee_out {
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* employee_out.jsp 디자인 */
+form#employee_out fieldset {
+	border: none;
+}
+
+/* employee_out.jsp 디자인 */
+form#employee_out fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+form#employee_out label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#employee_out_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+
+/* 
+*	사원기능의 내정보 메뉴 스타일 코드 끝남 
+*/
+
+
+
+
+
+
+/* 
+*	관리자기능의 공지사항 메뉴 스타일 코드 
+*/
+
+/* information_ByAdmin.jsp 디자인 */
+article table#information_ByAdmin {
+	width: 1400px;
+	height : 40%;
+	float : right;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+/* information_ByAdmin.jsp 디자인 */
+article table#information_ByAdmin th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* information_ByAdmin.jsp 디자인 */
+article table#information_ByAdmin td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* informationView_ByAdmin.jsp 디자인 */
+form#informationView_ByAdmin {
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* informationView_ByAdmin.jsp 디자인 */
+form#informationView_ByAdmin fieldset {
+	border : none;
+}
+
+/* informationView_ByAdmin.jsp 디자인 */
+form#informationView_ByAdmin fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+form#informationView_ByAdmin label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#informationView_ByAdmin_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* information_write_ByAdmin.jsp 디자인 */
+form#information_write_ByAdmin{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* information_write_ByAdmin.jsp 디자인 */
+form#information_write_ByAdmin fieldset {
+	border: none;
+}
+
+/* information_write_ByAdmin.jsp 디자인 */
+form#information_write_ByAdmin fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* employee_join_post.jsp 디자인 */
+form#information_write_ByAdmin label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#information_write_ByAdmin_input {
+	margin-bottom : 10px;
+	width : 600px;
+	height : 25px;
+}
+
+
+/* 
+*	관리자기능의 공지사항 메뉴 스타일 코드 끝남 
+*/
+
+
+/* 
+*	관리자기능의 기본정보 메뉴 스타일 코드
+*/
+
+
+/* basic_information_ByAdmin.jsp 디자인 */
+article table#basic_information_ByAdmin {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+/* basic_information_ByAdmin.jsp 디자인 */
+article table#basic_information_ByAdmin th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* basic_information_ByAdmin.jsp 디자인 */
+article table#basic_information_ByAdmin td {
+	text-align: left;
+	padding: 6px 0;
+}
+
+/* organization_information_ByAdmin.jsp 디자인 */
+article table#organization_information_ByAdmin {
+	width: 1000px;
+	height : 500px;
+	border-collapse: collapse;
+	margin-left : 50px;
+}
+
+/* organization_information_ByAdmin.jsp 디자인 */
+/*
+article table#organization_information_ByAdmin th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+*/
+
+/* organization_information_ByAdmin.jsp 디자인 */
+/*
+article table#organization_information_ByAdmin td {
+	text-align: center;
+	padding: 6px 0;
+}
+*/
+
+/* salary_information_ByAdmin.jsp 디자인 */
+article table#salary_information_ByAdmin {
+	width: 1000px;
+	height : 500px;
+	border-collapse: collapse;
+	border : 1px solid #666;
+	margin-left : 100px;
+}
+
+/* salary_information_ByAdmin.jsp 디자인 */
+article table#salary_information_ByAdmin th {
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom : 1px solid #666;
+	border-left : 1px solid #666;
+}
+
+/* salary_information_ByAdmin.jsp 디자인 */
+article table#salary_information_ByAdmin td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom : 1px dotted #666;
+	border-left : 1px dotted #666;
+}
+
+/* work_information_ByAdmin.jsp 디자인 */
+article table#work_information_ByAdmin {
+	width: 1000px;
+	height : 600px;
+	border-collapse: collapse;
+}
+
+/* work_information_ByAdmin.jsp 디자인 */
+article table#work_information_ByAdmin th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* work_information_ByAdmin.jsp 디자인 */
+article table#work_information_ByAdmin td {
+	text-align: center;
+	padding: 6px 0;
+}
+
+
+/* 
+*	관리자기능의 기본정보 메뉴 스타일 코드 끝남 
+*/
+
+
+/* 
+*	관리자기능의 내정보 메뉴 스타일 코드
+*/
+
+/* hrd_menu.jsp 디자인 */
+article table#hrd_menu {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+/* hrd_menu.jsp 디자인 */
+article table#hrd_menu th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* hrd_menu.jsp 디자인 */
+article table#hrd_menu td {
+	text-align: left;
+	padding: 6px 0;
+}
+
+/* hrd_mymenu.jsp 디자인 */
+form#hrd_mymenu {
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* hrd_mymenu.jsp 디자인 */
+form#hrd_mymenu fieldset {
+	border: none;
+}
+
+/* hrd_mymenu.jsp 디자인 */
+form#hrd_mymenu fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+form#hrd_mymenu label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#hrd_mymenu_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* hrd_join_post.jsp 디자인 */
+form#hrd_join_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* hrd_join_post.jsp 디자인 */
+form#hrd_join_post fieldset {
+	border: none;
+}
+
+/* hrd_join_post.jsp 디자인 */
+form#hrd_join_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* hrd_join_post.jsp 디자인 */
+form#hrd_join_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* hrd_join_post.jsp 디자인 */
+#hrd_join_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* admin_join_post.jsp 디자인 */
+form#admin_join_post {
+	width: 1000px;
+	height : 800px;
+	margin-top : 50px;
+}
+
+/* admin_join_post.jsp 디자인 */
+form#admin_join_post fieldset {
+	border: none;
+}
+
+/* admin_join_post.jsp 디자인 */
+form#admin_join_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* admin_join_post.jsp 디자인 */
+form#admin_join_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* admin_join_post.jsp 디자인 */
+form#admin_join_post_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+
+
+/* hrd_idpwd_search.jsp 디자인 */
+article table#hrd_idpwd_search {
+	width: 500px;
+	height : 80px;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* hrd_idpwd_search.jsp 디자인 */
+article table#hrd_idpwd_search th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* hrd_idpwd_search.jsp 디자인 */
+article table#hrd_idpwd_search td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+
+/* admin_idpwd_search.jsp 디자인 */
+article table#admin_idpwd_search {
+	width: 500px;
+	height : 80px;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* admin_idpwd_search.jsp 디자인 */
+article table#admin_idpwd_search th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* admin_idpwd_search.jsp 디자인 */
+article table#admin_idpwd_search td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+
+/* hrd_out.jsp 디자인 */
+form#hrd_out {
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* hrd_out.jsp 디자인 */
+form#hrd_out fieldset {
+	border: none;
+}
+
+/* hrd_out.jsp 디자인 */
+form#hrd_out fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* hrd_out.jsp 디자인 */
+form#hrd_out label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#hrd_out_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+
+/* 
+*	관리자기능의 내정보 메뉴 스타일 코드 끝남
+*/
+
+
+/* 
+*	관리자기능의 인사관리 메뉴 스타일 코드
+*/
+
+
+/* hrd_information.jsp 디자인 */
+article table#hrd_information {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* hrd_information.jsp 디자인 */
+article table#hrd_information th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* hrd_information.jsp 디자인 */
+article table#hrd_information td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* hrd_detail.jsp 디자인 */
+form#hrd_detail{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* hrd_detail.jsp 디자인 */
+form#hrd_detail fieldset {
+	border: none;
+}
+
+/* hrd_detail.jsp 디자인 */
+form#hrd_detail fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* hrd_detail.jsp 디자인 */
+form#hrd_detail label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#hrd_detail_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* hrd_enroll.jsp 디자인 */
+form#hrd_enroll{
+	width: 1000px;
+	height : 800px;
+	margin-top : 50px;
+}
+
+/* hrd_enroll.jsp 디자인 */
+form#hrd_enroll fieldset {
+	border: none;
+}
+
+/* hrd_enroll.jsp 디자인 */
+form#hrd_enroll fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* hrd_enroll.jsp 디자인 */
+form#hrd_enroll label {
+	width: 100px; 
+	height : 40px;
+	float: left;
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#hrd_enroll_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+#hrd_enroll_radio {
+	margin-bottom : 10px;
+	height : 40px;
+}
+
+
+/* 
+*	관리자기능의 인사관리 메뉴 스타일 코드 끝남 
+*/
+
+
+
+/* 
+*	관리자기능의 근태정보 메뉴 스타일 코드 
+*/
+
+/* disciplinary_menu_ByAdmin.jsp 디자인 */
+article table#disciplinary_menu_ByAdmin {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* disciplinary_menu_ByAdmin.jsp 디자인 */
+article table#disciplinary_menu_ByAdmin th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* disciplinary_menu_ByAdmin.jsp 디자인 */
+article table#disciplinary_menu_ByAdmin td {
+	padding: 6px 0;
+}
+
+/* disciplinary_list.jsp 디자인 */
+article table#disciplinary_list {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* disciplinary_list.jsp 디자인 */
+article table#disciplinary_list th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* disciplinary_list.jsp 디자인 */
+article table#disciplinary_list td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* disciplinary_detail.jsp 디자인 */
+form#disciplinary_detail{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* disciplinary_detail.jsp 디자인 */
+form#disciplinary_detail fieldset {
+	border: none;
+}
+
+/* disciplinary_detail.jsp 디자인 */
+form#disciplinary_detail fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* disciplinary_detail.jsp 디자인 */
+form#disciplinary_detail label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* disciplinary_detail.jsp 디자인 */
+#disciplinary_detail_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* disciplinary_enroll_post.jsp 디자인 */
+form#disciplinary_enroll_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* disciplinary_enroll_post.jsp 디자인 */
+form#disciplinary_enroll_post fieldset {
+	border: none;
+}
+
+/* disciplinary_enroll_post.jsp 디자인 */
+form#disciplinary_enroll_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* disciplinary_enroll_post.jsp 디자인 */
+form#disciplinary_enroll_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* disciplinary_enroll_post.jsp 디자인 */
+#disciplinary_enroll_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* vacationList.jsp 디자인 */
+article table#vacationList {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* vacationList.jsp 디자인 */
+article table#vacationList th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* vacationList.jsp 디자인 */
+article table#vacationList td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* vacation_detail.jsp 디자인 */
+form#vacation_detail{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* vacation_detail.jsp 디자인 */
+form#vacation_detail fieldset {
+	border: none;
+}
+
+/* vacation_detail.jsp 디자인 */
+form#vacation_detail fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* vacation_detail.jsp 디자인 */
+form#vacation_detail label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* vacation_detail.jsp 디자인 */
+#vacation_detail_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* vacation_enroll_post.jsp 디자인 */
+form#vacation_enroll_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* vacation_enroll_post.jsp 디자인 */
+form#vacation_enroll_post fieldset {
+	border: none;
+}
+
+/* vacation_enroll_post.jsp 디자인 */
+form#vacation_enroll_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* vacation_enroll_post.jsp 디자인 */
+form#vacation_enroll_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+#vacation_enroll_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+
+/* 
+*	관리자기능의 근태정보 메뉴 스타일 코드 끝남 
+*/
+
+
+/* 
+*	관리자기능의 급여정보 메뉴 스타일 코드 
+*/
+
+/* salary_menu_ByAdmin.jsp 디자인 */
+article table#salary_menu_ByAdmin {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* salary_menu_ByAdmin.jsp 디자인 */
+article table#salary_menu_ByAdmin th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+}
+
+/* salary_menu_ByAdmin.jsp 디자인 */
+article table#salary_menu_ByAdmin td {
+	text-align: left;
+	padding: 6px 0;
+}
+
+/* salary_list.jsp 디자인 */
+article table#salary_list {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* salary_list.jsp 디자인 */
+article table#salary_list th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* salary_list.jsp 디자인 */
+article table#salary_list td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* salary_detail_post.jsp 디자인 */
+form#salary_detail_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* salary_detail_post.jsp 디자인 */
+form#salary_detail_post fieldset {
+	border: none;
+}
+
+/* salary_detail_post.jsp 디자인 */
+form#salary_detail_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* salary_detail_post.jsp 디자인 */
+form#salary_detail_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* salary_detail_post.jsp 디자인 */
+#salary_detail_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* salary_enroll_post.jsp 디자인 */
+form#salary_enroll_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* salary_enroll_post.jsp 디자인 */
+form#salary_enroll_post fieldset {
+	border: none;
+}
+
+/* salary_enroll_post.jsp 디자인 */
+form#salary_enroll_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* salary_enroll_post.jsp 디자인 */
+form#salary_enroll_post label {
+	width: 100px;
+	height : 40px; 
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* salary_enroll_post.jsp 디자인 */
+#salary_enroll_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* retirement_list.jsp 디자인 */
+article table#retirement_list {
+	width: 1400px;
+	height : 40%;
+	border-collapse: collapse;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-top : 60px;
+}
+
+/* retirement_list.jsp 디자인 */
+article table#retirement_list th {
+	height: 20px;
+	width: 70px;
+	font-size: 14px; 
+	font-weight: bold;
+	padding: 5px; 
+	color: #666;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* retirement_list.jsp 디자인 */
+article table#retirement_list td {
+	text-align: center;
+	padding: 6px 0;
+	border-bottom: 1px dotted #999;
+	border-right: 1px dotted #999;
+	border-left: 1px dotted #999;
+}
+
+/* retirement_detail_post.jsp 디자인 */
+form#retirement_detail_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* retirement_detail_post.jsp 디자인 */
+form#retirement_detail_post fieldset {
+	border: none;
+}
+
+/* retirement_detail_post.jsp 디자인 */
+form#retirement_detail_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px; 
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* retirement_detail_post.jsp 디자인 */
+form#retirement_detail_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* retirement_detail_post.jsp 디자인 */
+#retirement_detail_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* retirement_enroll_post.jsp 디자인 */
+form#retirement_enroll_post{
+	width: 1000px;
+	height : 600px;
+	margin-top : 50px;
+}
+
+/* retirement_enroll_post.jsp 디자인 */
+form#retirement_enroll_post fieldset {
+	border: none;
+}
+
+/* retirement_enroll_post.jsp 디자인 */
+form#retirement_enroll_post fieldset legend {
+	font-size: 20px; 
+	border-bottom: 1px dotted #666; 
+	width: 1000px;
+	background : #B2EBF4;
+	margin-bottom : 10px;
+}
+
+/* retirement_enroll_post.jsp 디자인 */
+form#retirement_enroll_post label {
+	width: 100px; 
+	height : 40px;
+	float: left; 
+	background : #B2EBF4;
+	margin-right : 20px;
+}
+
+/* retirement_enroll_post.jsp 디자인 */
+#retirement_enroll_input {
+	margin-bottom : 10px;
+	width : 400px;
+	height : 25px;
+}
+
+/* 
+*	관리자기능의 급여정보 메뉴 스타일 코드 끝남
+*/
+
+
+/* 
+*	차트기능 시작
+*/
+
+
+#chart h1 {
+	margin-left : 50px;
+}
+
+#piechart {
+	width : 400px;
+	height : 300px;
+	margin-left : 50px;
+	margin-top : 30px;
+}
+
+#piechart1 {
+	width : 400px;
+	height : 300px;
+	margin-left : 50px;
+	margin-top : 30px;
+}
+
+#barchart_values {
+	width : 500px;
+	heigth : 400px;
+	margin-left : 50px;
+	margin-top : 30px;
+}
+
+#chart_div {
+	width : 400px;
+	height : 300px;
+	margin-left : 50px;
+	margin-top : 30px;
+}
+
+
+/* 
+*	차트기능 끝남
+*/
+
+
+
+
+
+
